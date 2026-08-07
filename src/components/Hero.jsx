@@ -22,7 +22,7 @@ const Hero = () => {
         <div className="max-w-xl space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
           
           {/* Título em duas linhas com md:text-7xl */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-tight md:leading-none tracking-tight">
+          <h1 className="text-7xl sm:text-7xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-tight md:leading-none tracking-tight">
             Papelaria<br /> <span className="text-yama-red">&</span> Gráfica
           </h1>
 
@@ -31,10 +31,12 @@ const Hero = () => {
             TUDO EM UM SÓ LUGAR!
           </div>
 
-          {/* Descrição sem caixa */}
-          <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0 font-medium">
-            Há mais de 30 anos no mercado proporcionando as melhores soluções para você e sua empresa!
-          </p>
+          {/* Descrição com container transparente e quebra de linha (Apenas no Desktop) */}
+          <div className="md:bg-white/50 md:backdrop-blur-md md:p-5 md:rounded-2xl md:shadow-sm max-w-lg mx-auto md:mx-0">
+            <p className="text-base sm:text-lg text-gray-700 font-medium">
+              Há mais de 30 anos no mercado proporcionando<br className="hidden md:block" /> as melhores soluções para você e sua empresa!
+            </p>
+          </div>
 
           {/* Botão de Contato */}
           <div className="pt-2 flex justify-center md:justify-start">
