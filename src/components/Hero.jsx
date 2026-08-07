@@ -6,25 +6,37 @@ const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="bg-gray-50 py-12 md:py-20 overflow-hidden" id="sobre">
-      <div className="container mx-auto px-6 lg:px-24 grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-        
-        {/* Coluna Esquerda - Texto */}
-        <div className="space-y-6 text-center md:text-left flex flex-col justify-center z-10">
+    <section className="relative min-h-[500px] md:min-h-[650px] flex items-center bg-white overflow-hidden" id="sobre">
+      
+      {/* Imagem de Fundo (Visível APENAS no Desktop, ocupando o fundo todo) */}
+      <div className="hidden md:block absolute inset-0 z-0">
+        <img 
+          src="/img-hero.png" 
+          alt="Yama Print Fundo" 
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+
+      {/* Conteúdo do Hero */}
+      <div className="container mx-auto px-6 lg:px-24 relative z-10 py-12 md:py-0">
+        <div className="max-w-xl space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
           
           {/* Título em duas linhas com md:text-7xl */}
-          <h1 className="text-7xl sm:text-7xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-tight md:leading-none tracking-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-tight md:leading-none tracking-tight">
             Papelaria<br /> <span className="text-yama-red">&</span> Gráfica
           </h1>
 
+          {/* Tag */}
           <div className="inline-block bg-yama-red text-white font-bold px-6 py-2.5 text-sm md:text-base rounded-full shadow-md transform hover:scale-105 transition-transform cursor-default w-fit mx-auto md:mx-0 tracking-wide">
             TUDO EM UM SÓ LUGAR!
           </div>
 
+          {/* Descrição sem caixa */}
           <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0 font-medium">
             Há mais de 30 anos no mercado proporcionando as melhores soluções para você e sua empresa!
           </p>
 
+          {/* Botão de Contato */}
           <div className="pt-2 flex justify-center md:justify-start">
             <button 
               onClick={() => setIsModalOpen(true)}
@@ -34,20 +46,8 @@ const Hero = () => {
               <span>Entre em contato</span>
             </button>
           </div>
-        </div>
 
-        {/* Coluna Direita - Imagem (Visível apenas no Desktop, removida no mobile) */}
-        <div className="relative hidden md:flex justify-center items-center w-full">
-          <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/80 via-red-100/70 to-yellow-100/80 rounded-3xl transform rotate-2 scale-105 -z-10 blur-2xl opacity-90"></div>
-          <div className="relative z-10 w-full">
-             <img 
-               src="/img-hero.png" 
-               alt="Yama Print Hero" 
-               className="w-full aspect-[2/1] object-cover rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-[1.01]" 
-             />
-          </div>
         </div>
-
       </div>
 
       {/* Modal de Escolha de Unidade */}
