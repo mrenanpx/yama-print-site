@@ -8,6 +8,15 @@ const Hero = () => {
   return (
     <section className="relative min-h-[500px] md:min-h-[650px] flex items-center bg-white overflow-hidden" id="sobre">
       
+      {/* Imagem de Fundo (Visível APENAS no Mobile) */}
+      <div className="block md:hidden absolute inset-0 z-0">
+        <img 
+          src="/img-hero-mobile.png" 
+          alt="Yama Print Fundo Mobile" 
+          className="w-full h-full object-cover object-center"
+        />
+      </div>
+
       {/* Imagem de Fundo (Visível APENAS no Desktop, ocupando o fundo todo) */}
       <div className="hidden md:block absolute inset-0 z-0">
         <img 
@@ -21,7 +30,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 lg:px-24 relative z-10 py-12 md:py-0">
         <div className="max-w-xl space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
           
-          {/* Título em duas linhas com md:text-7xl */}
+          {/* Título em duas linhas */}
           <h1 className="text-7xl sm:text-7xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-tight md:leading-none tracking-tight">
             Papelaria<br /> <span className="text-yama-red">&</span> Gráfica
           </h1>
@@ -31,8 +40,8 @@ const Hero = () => {
             TUDO EM UM SÓ LUGAR!
           </div>
 
-          {/* Descrição com container transparente e quebra de linha (Apenas no Desktop) */}
-          <div className="md:bg-white/50 md:backdrop-blur-md md:p-5 md:rounded-2xl md:shadow-sm max-w-lg mx-auto md:mx-0">
+          {/* Descrição: Sem caixa no mobile, com container 40% transparente no Desktop */}
+          <div className="bg-transparent md:bg-white/40 md:backdrop-blur-md md:p-5 md:rounded-2xl md:shadow-sm max-w-lg mx-auto md:mx-0">
             <p className="text-base sm:text-lg text-gray-700 font-medium">
               Há mais de 30 anos no mercado proporcionando<br className="hidden md:block" /> as melhores soluções para você e sua empresa!
             </p>
