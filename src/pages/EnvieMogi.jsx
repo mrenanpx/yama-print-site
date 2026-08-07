@@ -31,7 +31,7 @@ const EnvieMogi = () => {
 
         <div className="space-y-4 mb-8">
           <a
-            href="https://wa.me/5511999999991"
+            href="https://wa.me/551134589796"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-3 bg-green-600 hover:bg-green-700 text-white py-4 px-6 rounded-2xl font-bold text-lg shadow-lg transition-all"

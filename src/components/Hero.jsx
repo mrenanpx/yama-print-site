@@ -67,7 +67,7 @@ const Hero = () => {
 
             <div className="space-y-4">
               <a 
-                href="https://wa.me/5511999999991" 
+                href="https://wa.me/551134589796" 
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsModalOpen(false)}
@@ -88,7 +88,7 @@ const Hero = () => {
               </a>
 
               <a 
-                href="https://wa.me/5511999999992" 
+                href="https://wa.me/551147447839" 
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsModalOpen(false)}

@@ -65,7 +65,7 @@ const Location = () => {
             {/* Botão de Contato WhatsApp da Unidade Mogi */}
             <div className="px-8 pb-8 pt-0">
               <a 
-                href="https://wa.me/5511999999991" 
+                href="https://wa.me/551134589796" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-3 bg-white border-2 border-yama-green-wa text-gray-800 py-3.5 rounded-full font-bold text-base hover:bg-yama-green-wa hover:text-white transition-all duration-300 group shadow-md"
@@ -106,7 +106,7 @@ const Location = () => {
                 <div className="space-y-2 text-sm text-gray-700 mb-6">
                   <div className="flex items-center justify-center gap-2">
                     <FaPhone className="text-gray-400 text-xs" />
-                    <span>11 4747-3883 | 11 4744-2839</span>
+                    <span>11 4747-3880 | 11 4744-7839</span>
                   </div>
                   <div className="flex items-center justify-center gap-2">
                     <FaEnvelope className="text-gray-400 text-xs" />
@@ -119,7 +119,7 @@ const Location = () => {
             {/* Botão de Contato WhatsApp da Unidade Suzano */}
             <div className="px-8 pb-8 pt-0">
               <a 
-                href="https://wa.me/5511999999992" 
+                href="https://wa.me/551147447839" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-flex items-center justify-center gap-3 bg-white border-2 border-yama-green-wa text-gray-800 py-3.5 rounded-full font-bold text-base hover:bg-yama-green-wa hover:text-white transition-all duration-300 group shadow-md"
