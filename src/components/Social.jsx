@@ -22,7 +22,7 @@ const Social = () => {
         
         {/* Botão de Ação */}
         <a 
-          href=" " // Coloque o link do seu Instagram aqui
+          href="https://instagram.com/lojayamaprint" // Coloque o link do seu Instagram aqui
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-white border border-gray-200 text-yama-blue-dark px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
