@@ -19,11 +19,14 @@ const Partners = () => {
 
   return (
     <section className="bg-white py-20 overflow-hidden border-t border-gray-100" id="marcas">
-      <div className="container mx-auto px-6 lg:px-24 mb-12">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-yama-blue-dark text-center">
-          Marcas Parceiras
-        </h2>
-      </div>
+      <div className="text-center mb-10">
+  <span className="text-yama-red font-bold uppercase tracking-widest text-xs md:text-sm bg-red-50 px-4 py-1.5 rounded-full inline-block mb-3">
+    Qualidade em primeiro lugar!
+  </span>
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yama-blue-dark">
+    Marcas parceiras
+  </h2>
+</div>
 
       {/* Container do Carrossel com efeito de gradiente nas bordas */}
       <div className="relative w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">

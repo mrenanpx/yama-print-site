@@ -64,9 +64,14 @@ const Services = () => {
     <section className="bg-white py-20" id="servicos">
       <div className="container mx-auto px-6 lg:px-24">
         
-        <h2 className="text-4xl md:text-5xl font-extrabold text-yama-blue-dark text-center mb-16">
-          O que oferecemos?
-        </h2>
+<div className="text-center mb-10">
+  <span className="text-yama-red font-bold uppercase tracking-widest text-xs md:text-sm bg-red-50 px-4 py-1.5 rounded-full inline-block mb-3">
+    Conheça nossa estrutura
+  </span>
+  <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-yama-blue-dark">
+    O que oferecemos?
+  </h2>
+</div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Aqui o React lê a nossa lista acima e cria os 6 cartões automaticamente */}
