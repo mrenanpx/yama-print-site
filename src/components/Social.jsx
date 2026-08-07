@@ -28,7 +28,7 @@ const Social = () => {
           className="inline-flex items-center gap-3 bg-white border border-gray-200 text-yama-blue-dark px-10 py-4 rounded-full font-bold text-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
         >
           <FaInstagram className="text-red-500 text-2xl" />
-          <span>Seguir @lojayamaprint</span>
+          <span>@lojayamaprint</span>
         </a>
         
       </div>

@@ -25,8 +25,8 @@ const Home = () => {
         <Services />
         <WhyUs />
         <Location />
-        <Partners />
         <Social />
+        <Partners />
       </main>
       <Footer />
     </>
