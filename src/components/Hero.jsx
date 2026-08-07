@@ -6,22 +6,23 @@ const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="bg-gray-50 py-8 md:py-12 overflow-hidden" id="sobre">
+    <section className="bg-gray-50 py-8 md:py-16 overflow-hidden" id="sobre">
       <div className="container mx-auto px-6 lg:px-24 grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
         
         {/* Coluna Esquerda - Texto */}
         <div className="space-y-6 text-center md:text-left flex flex-col justify-center z-10">
           
-          {/* Título responsivo e otimizado para não quebrar feio no mobile */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-yama-blue-dark leading-tight">
-            Papelaria<br /> <span className="text-yama-red">&</span> Gráfica
+          {/* Título com destaque máximo (muito maior no desktop e mobile) */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-none tracking-tight">
+            Papelaria <br />
+            <span className="text-yama-red">&</span> Gráfica
           </h1>
 
-          <div className="inline-block bg-yama-red text-white font-bold px-6 py-2 text-sm md:text-base rounded-full shadow-md transform hover:scale-105 transition-transform cursor-default w-fit mx-auto md:mx-0">
+          <div className="inline-block bg-yama-red text-white font-bold px-6 py-2.5 text-sm md:text-base rounded-full shadow-md transform hover:scale-105 transition-transform cursor-default w-fit mx-auto md:mx-0 tracking-wide">
             TUDO EM UM SÓ LUGAR!
           </div>
 
-          <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0">
+          <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0 font-medium">
             Há mais de 30 anos no mercado proporcionando as melhores soluções para você e sua empresa!
           </p>
 
@@ -37,7 +38,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Botão de Contato (No mobile fica abaixo da imagem) */}
+          {/* Botão de Contato */}
           <div className="pt-2 flex justify-center md:justify-start">
             <button 
               onClick={() => setIsModalOpen(true)}
@@ -49,7 +50,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Coluna Direita - Imagem padrão para Desktop (Escondida no mobile, pois já exibimos acima) */}
+        {/* Coluna Direita - Imagem padrão para Desktop */}
         <div className="relative hidden md:flex justify-center items-center w-full">
           <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/80 via-red-100/70 to-yellow-100/80 rounded-3xl transform rotate-2 scale-105 -z-10 blur-2xl opacity-90"></div>
           <div className="relative z-10 w-full">
