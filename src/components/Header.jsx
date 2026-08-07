@@ -24,6 +24,11 @@ const Header = () => {
   const handleBudgetSubmit = (e) => {
     e.preventDefault();
     
+    // Direcionamento dinâmico invisível para o usuário com base na escolha
+    const emailDestino = formData.department === 'GRÁFICA' 
+      ? 'graficamogi@yamaprint.com.br' 
+      : 'mogi@yamaprint.com.br';
+
     const subject = encodeURIComponent(`Novo Orçamento: ${formData.department} - ${formData.name}`);
     const body = encodeURIComponent(
       `Nome: ${formData.name}\n` +
@@ -33,8 +38,7 @@ const Header = () => {
       `Mensagem / Solicitação:\n${formData.message}`
     );
 
-    // Dispara o e-mail para os dois endereços solicitados
-    window.location.href = `mailto:mogi@yamaprint.com.br,graficamogi@yamprint.com.br?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${emailDestino}?subject=${subject}&body=${body}`;
     
     setIsBudgetModalOpen(false);
   };
@@ -68,7 +72,7 @@ const Header = () => {
 
           {/* Botão do Menu Mobile (Celular) */}
           <button
-            className="md:hidden text-yama-blue-dark text-3xl focus:outline-none"
+            className="md:hidden text-yama-blue-dark text-3xl focus:outline-none cursor-pointer"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <FiX /> : <FiMenu />}
@@ -167,7 +171,7 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* Seletor de Setor */}
+              {/* Seletor de Setor (Limpo apenas com os nomes) */}
               <div>
                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Setor de Atendimento</label>
                 <select 
