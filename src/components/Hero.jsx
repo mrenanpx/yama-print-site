@@ -13,7 +13,7 @@ const Hero = () => {
         <div className="space-y-6 text-center md:text-left flex flex-col justify-center z-10">
           
           {/* Título com destaque máximo (muito maior no desktop e mobile) */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-none tracking-tight">
+          <h1 className="text-7xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-none tracking-tight">
             Papelaria <br />
             <span className="text-yama-red">&</span> Gráfica
           </h1>
