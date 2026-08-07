@@ -11,16 +11,34 @@ const Hero = () => {
         
         {/* Coluna Esquerda - Texto */}
         <div className="space-y-6 text-center md:text-left flex flex-col justify-center z-10">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-yama-blue-dark leading-tight">
+          
+          {/* Título responsivo e otimizado para não quebrar feio no mobile */}
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-yama-blue-dark leading-tight">
             Papelaria<br /> <span className="text-yama-red">&</span> Gráfica
           </h1>
+
           <div className="inline-block bg-yama-red text-white font-bold px-6 py-2 text-sm md:text-base rounded-full shadow-md transform hover:scale-105 transition-transform cursor-default w-fit mx-auto md:mx-0">
             TUDO EM UM SÓ LUGAR!
           </div>
-          <p className="text-lg text-gray-700 max-w-lg mx-auto md:mx-0">
+
+          <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0">
             Há mais de 30 anos no mercado proporcionando as melhores soluções para você e sua empresa!
           </p>
-          <div className="pt-2">
+
+          {/* Imagem no mobile: aparece logo abaixo do texto/subtítulo e antes do botão */}
+          <div className="relative flex justify-center items-center w-full md:hidden my-4">
+            <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/80 via-red-100/70 to-yellow-100/80 rounded-3xl transform rotate-2 scale-105 -z-10 blur-2xl opacity-90"></div>
+            <div className="relative z-10 w-full">
+               <img 
+                 src="/img-hero.png" 
+                 alt="Yama Print Hero" 
+                 className="w-full aspect-[2/1] object-cover rounded-3xl shadow-xl" 
+               />
+            </div>
+          </div>
+
+          {/* Botão de Contato (No mobile fica abaixo da imagem) */}
+          <div className="pt-2 flex justify-center md:justify-start">
             <button 
               onClick={() => setIsModalOpen(true)}
               className="inline-flex items-center gap-3 bg-white border-2 border-yama-green-wa text-gray-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-yama-green-wa hover:text-white transition-all duration-300 group shadow-lg cursor-pointer"
@@ -31,8 +49,8 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Coluna Direita - Imagem com proporção 2:1 travada e preenchimento total */}
-        <div className="relative flex justify-center items-center w-full">
+        {/* Coluna Direita - Imagem padrão para Desktop (Escondida no mobile, pois já exibimos acima) */}
+        <div className="relative hidden md:flex justify-center items-center w-full">
           <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/80 via-red-100/70 to-yellow-100/80 rounded-3xl transform rotate-2 scale-105 -z-10 blur-2xl opacity-90"></div>
           <div className="relative z-10 w-full">
              <img 

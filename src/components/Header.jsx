@@ -57,7 +57,7 @@ const Header = () => {
             />
           </a>
 
-          {/* Menu Desktop */}
+          {/* Menu Desktop (Permanecendo limpo como você já tem) */}
           <nav className="hidden md:flex items-center gap-8">
             <a href="#localizacao" className="text-gray-700 hover:text-yama-blue-dark font-medium text-sm transition-colors uppercase tracking-wide">
               Contato
@@ -79,13 +79,13 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Menu Mobile */}
+        {/* Menu Mobile (Atualizado: Contato agora virou botão estilo pílula com cor diferenciada) */}
         {isOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-lg border-t mt-4 px-6 py-4 flex flex-col gap-4 shadow-xl absolute w-full left-0 z-40">
+          <div className="md:hidden bg-white/95 backdrop-blur-lg border-t mt-4 px-6 py-5 flex flex-col gap-3 shadow-xl absolute w-full left-0 z-40">
             <a
               href="#localizacao"
-              className="text-gray-700 font-medium text-lg border-b border-gray-50 pb-2 uppercase"
               onClick={() => setIsOpen(false)}
+              className="w-full bg-yama-blue-dark text-white px-5 py-3 rounded-full font-bold text-center shadow-md uppercase tracking-wider text-sm hover:bg-blue-900 transition-all cursor-pointer"
             >
               Contato
             </a>
@@ -94,7 +94,7 @@ const Header = () => {
                 setIsBudgetModalOpen(true);
                 setIsOpen(false);
               }}
-              className="bg-yama-red text-white px-5 py-3 rounded-full font-bold text-center mt-2 shadow-md uppercase cursor-pointer border-none"
+              className="w-full bg-yama-red text-white px-5 py-3 rounded-full font-bold text-center shadow-md uppercase tracking-wider text-sm hover:bg-red-700 transition-all cursor-pointer border-none"
             >
               Orçamento
             </button>
@@ -171,7 +171,7 @@ const Header = () => {
                 </div>
               </div>
 
-              {/* Seletor de Setor (Limpo apenas com os nomes) */}
+              {/* Seletor de Setor */}
               <div>
                 <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Setor de Atendimento</label>
                 <select 
