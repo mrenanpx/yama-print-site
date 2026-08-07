@@ -1,45 +1,46 @@
 import React, { useState } from 'react';
-import { FaWhatsapp, FaTimes } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
 import { FiX } from 'react-icons/fi';
 
 const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="bg-gray-50 py-8 md:py-16 overflow-hidden" id="sobre">
-      <div className="container mx-auto px-6 lg:px-24 grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-        
-        {/* Coluna Esquerda - Texto */}
-        <div className="space-y-6 text-center md:text-left flex flex-col justify-center z-10">
+    <section className="relative min-h-[550px] md:min-h-[650px] flex items-center bg-white overflow-hidden" id="sobre">
+      
+      {/* Imagem de Fundo Limpa */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="/img-hero.png" 
+          alt="Yama Print Fundo" 
+          className="w-full h-full object-cover object-right md:object-center"
+        />
+      </div>
+
+      {/* Conteúdo do Hero */}
+      <div className="container mx-auto px-6 lg:px-24 relative z-10 py-12">
+        <div className="max-w-xl space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
           
-          {/* Título com destaque máximo (muito maior no desktop e mobile) */}
-          <h1 className="text-7xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-none tracking-tight">
+          {/* Título */}
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-none tracking-tight">
             Papelaria <br />
             <span className="text-yama-red">&</span> Gráfica
           </h1>
 
-          <div className="inline-block bg-yama-red text-white font-bold px-6 py-2.5 text-sm md:text-base rounded-full shadow-md transform hover:scale-105 transition-transform cursor-default w-fit mx-auto md:mx-0 tracking-wide">
+          {/* Tag */}
+          <div className="inline-block bg-yama-red text-white font-bold px-6 py-2.5 text-sm md:text-base rounded-full shadow-md transform hover:scale-105 transition-transform cursor-default tracking-wide">
             TUDO EM UM SÓ LUGAR!
           </div>
 
-          <p className="text-base sm:text-lg text-gray-700 max-w-lg mx-auto md:mx-0 font-medium">
-            Há mais de 30 anos no mercado proporcionando as melhores soluções para você e sua empresa!
-          </p>
-
-          {/* Imagem no mobile: aparece logo abaixo do texto/subtítulo e antes do botão */}
-          <div className="relative flex justify-center items-center w-full md:hidden my-4">
-            <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/80 via-red-100/70 to-yellow-100/80 rounded-3xl transform rotate-2 scale-105 -z-10 blur-2xl opacity-90"></div>
-            <div className="relative z-10 w-full">
-               <img 
-                 src="/img-hero.png" 
-                 alt="Yama Print Hero" 
-                 className="w-full aspect-[2/1] object-cover rounded-3xl shadow-xl" 
-               />
-            </div>
+          {/* Caixa de Texto Protegida (Card com fundo branco e leve sombra) */}
+          <div className="bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-md border border-gray-100 max-w-md">
+            <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed">
+              Há mais de 30 anos no mercado proporcionando as melhores soluções para você e sua empresa!
+            </p>
           </div>
 
           {/* Botão de Contato */}
-          <div className="pt-2 flex justify-center md:justify-start">
+          <div className="pt-2">
             <button 
               onClick={() => setIsModalOpen(true)}
               className="inline-flex items-center gap-3 bg-white border-2 border-yama-green-wa text-gray-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-yama-green-wa hover:text-white transition-all duration-300 group shadow-lg cursor-pointer"
@@ -48,20 +49,8 @@ const Hero = () => {
               <span>Entre em contato</span>
             </button>
           </div>
-        </div>
 
-        {/* Coluna Direita - Imagem padrão para Desktop */}
-        <div className="relative hidden md:flex justify-center items-center w-full">
-          <div className="absolute inset-0 bg-gradient-to-tr from-blue-200/80 via-red-100/70 to-yellow-100/80 rounded-3xl transform rotate-2 scale-105 -z-10 blur-2xl opacity-90"></div>
-          <div className="relative z-10 w-full">
-             <img 
-               src="/img-hero.png" 
-               alt="Yama Print Hero" 
-               className="w-full aspect-[2/1] object-cover rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-[1.01]" 
-             />
-          </div>
         </div>
-
       </div>
 
       {/* Modal de Escolha de Unidade */}
