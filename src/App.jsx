@@ -7,6 +7,7 @@ import Hero from './components/Hero';
 import Services from './components/Services';
 import WhyUs from './components/WhyUs';
 import Partners from './components/Partners';
+import Social from './components/Social';
 import Location from './components/Location';
 import Footer from './components/Footer';
 
@@ -25,6 +26,7 @@ const Home = () => {
         <WhyUs />
         <Partners />
         <Location />
+        <Social />
       </main>
       <Footer />
     </>
