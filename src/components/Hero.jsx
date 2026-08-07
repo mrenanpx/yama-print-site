@@ -6,24 +6,24 @@ const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <section className="relative min-h-[550px] md:min-h-[650px] flex items-center bg-white overflow-hidden" id="sobre">
+    <section className="relative bg-white py-12 md:py-28 overflow-hidden" id="sobre">
       
-      {/* Imagem de Fundo Limpa */}
-      <div className="absolute inset-0 z-0">
+      {/* 1. Imagem de Fundo (Visível APENAS no Desktop) */}
+      <div className="hidden md:block absolute inset-0 z-0">
         <img 
           src="/img-hero.png" 
           alt="Yama Print Fundo" 
-          className="w-full h-full object-cover object-right md:object-center"
+          className="w-full h-full object-cover object-center"
         />
       </div>
 
-      {/* Conteúdo do Hero */}
-      <div className="container mx-auto px-6 lg:px-24 relative z-10 py-12">
+      {/* 2. Conteúdo do Hero */}
+      <div className="container mx-auto px-6 lg:px-24 relative z-10">
         <div className="max-w-xl space-y-6 text-center md:text-left flex flex-col items-center md:items-start">
           
           {/* Título */}
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-none tracking-tight">
-            Papelaria <br />
+          <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-yama-blue-dark leading-tight md:leading-none tracking-tight">
+            Papelaria <br className="hidden md:block" />
             <span className="text-yama-red">&</span> Gráfica
           </h1>
 
@@ -32,11 +32,20 @@ const Hero = () => {
             TUDO EM UM SÓ LUGAR!
           </div>
 
-          {/* Caixa de Texto Protegida (Card com fundo branco e leve sombra) */}
-          <div className="bg-white/95 backdrop-blur-md p-5 rounded-2xl shadow-md border border-gray-100 max-w-md">
+          {/* Caixa de Texto */}
+          <div className="bg-white/95 md:bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-md border border-gray-100 max-w-md">
             <p className="text-base sm:text-lg text-gray-700 font-medium leading-relaxed">
               Há mais de 30 anos no mercado proporcionando as melhores soluções para você e sua empresa!
             </p>
+          </div>
+
+          {/* Imagem no Mobile (Visível APENAS no celular, logo abaixo do texto) */}
+          <div className="w-full md:hidden my-4">
+            <img 
+              src="/img-hero.png" 
+              alt="Yama Print" 
+              className="w-full rounded-2xl shadow-lg object-cover"
+            />
           </div>
 
           {/* Botão de Contato */}
