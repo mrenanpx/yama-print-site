@@ -73,14 +73,14 @@ const Header = () => {
 
   return (
     <>
-      {/* Header com lógica de Hide on Scroll e translate-y */}
+      {/* Header com vidro acentuado Premium (Saturação + Opacidade ajustada + Borda de vidro) */}
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-1000 w-full py-4 ${
+        className={`sticky top-0 z-50 transition-all duration-1000 w-full py-4 ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         } ${
           isScrolled 
-            ? 'bg-white/80 backdrop-blur-2xl shadow-lg shadow-black/[0.03] border-b border-white/40' 
-            : 'bg-white/85 backdrop-blur-md border-b border-transparent'
+            ? 'bg-white/65 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_8px_30px_rgb(0,0,0,0.06)] border-b border-white/60' 
+            : 'bg-white/90 backdrop-blur-md border-b border-transparent'
         }`}
       >
         <div className="container mx-auto px-6 lg:px-24 flex items-center justify-between">
@@ -116,9 +116,9 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Menu Mobile */}
+        {/* Menu Mobile também com efeito de vidro premium */}
         {isOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 mt-4 px-6 py-5 flex flex-col gap-3 shadow-xl absolute w-full left-0 z-40">
+          <div className="md:hidden bg-white/75 backdrop-blur-2xl backdrop-saturate-150 border-t border-white/50 mt-4 px-6 py-5 flex flex-col gap-3 shadow-2xl absolute w-full left-0 z-40">
             <a
               href="#localizacao"
               onClick={() => setIsOpen(false)}
