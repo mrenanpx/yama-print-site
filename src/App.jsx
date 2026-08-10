@@ -10,6 +10,7 @@ import Partners from './components/Partners';
 import Social from './components/Social';
 import Location from './components/Location';
 import Footer from './components/Footer';
+import ProductsCarousel from './components/ProductsCarousel';
 
 // Importação das páginas ocultas de QR Code
 import EnvieMogi from './pages/EnvieMogi';
@@ -24,6 +25,7 @@ const Home = () => {
         <Hero />
         <Services />
         <WhyUs />
+        {/* <ProductsCarousel /> */}
         <Location />
         <Social />
         <Partners />
