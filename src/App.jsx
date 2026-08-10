@@ -26,7 +26,7 @@ const Home = () => {
         <Hero />
         <Services />
         <WhyUs />
-        {/* <ProductsCarousel /> */}
+        <ProductsCarousel />
         <Location />
         <Social />
         <Partners />
