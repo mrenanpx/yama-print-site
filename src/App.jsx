@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 // Importação dos componentes do site principal
 import Header from './components/Header';
@@ -37,16 +38,21 @@ const Home = () => {
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        {/* Página Principal do Site */}
-        <Route path="/" element={<Home />} />
-        
-        {/* Páginas Ocultas acessadas via QR Code */}
-        <Route path="/envie-seu-arquivo" element={<EnvieMogi />} />
-        <Route path="/envie-seu-arquivo2" element={<EnvieSuzano />} />
-      </Routes>
-    </Router>
+    <>
+      <Router>
+        <Routes>
+          {/* Página Principal do Site */}
+          <Route path="/" element={<Home />} />
+          
+          {/* Páginas Ocultas acessadas via QR Code */}
+          <Route path="/envie-seu-arquivo" element={<EnvieMogi />} />
+          <Route path="/envie-seu-arquivo2" element={<EnvieSuzano />} />
+        </Routes>
+      </Router>
+      
+      {/* Componente que registra as visitas de forma invisível */}
+      <Analytics />
+    </>
   );
 }
 
