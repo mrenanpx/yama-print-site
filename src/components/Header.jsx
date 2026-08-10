@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX } from 'react-icons/fi';
 import { FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 
@@ -6,6 +6,35 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [isBudgetModalOpen, setIsBudgetModalOpen] = useState(false);
+  
+  // Estados para controlar o comportamento do Smart Header
+  const [isVisible, setIsVisible] = useState(true);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  // Detecta a direção do scroll da página
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Aplica o efeito de vidro se não estiver no topo absoluto
+      setIsScrolled(currentScrollY > 20);
+
+      // Se desceu a página mais do que 100px (para não bugar no topo) e está descendo: esconde
+      if (currentScrollY > lastScrollY && currentScrollY > 600) {
+        setIsVisible(false);
+      } 
+      // Se rolou para cima: mostra o header novamente
+      else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   // Estados do formulário de orçamento
   const [formData, setFormData] = useState({
@@ -24,7 +53,6 @@ const Header = () => {
   const handleBudgetSubmit = (e) => {
     e.preventDefault();
     
-    // Direcionamento dinâmico invisível para o usuário com base na escolha
     const emailDestino = formData.department === 'GRÁFICA' 
       ? 'graficamogi@yamaprint.com.br' 
       : 'mogi@yamaprint.com.br';
@@ -45,19 +73,28 @@ const Header = () => {
 
   return (
     <>
-      <header className="bg-white/85 backdrop-blur-md py-4 shadow-sm sticky top-0 z-50 transition-all duration-300">
+      {/* Header com lógica de Hide on Scroll e translate-y */}
+      <header 
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-1000 w-full py-4 ${
+          isVisible ? 'translate-y-0' : '-translate-y-full'
+        } ${
+          isScrolled 
+            ? 'bg-white/80 backdrop-blur-2xl shadow-lg shadow-black/[0.03] border-b border-white/40' 
+            : 'bg-white/85 backdrop-blur-md border-b border-transparent'
+        }`}
+      >
         <div className="container mx-auto px-6 lg:px-24 flex items-center justify-between">
           
-          {/* Logo */}
+          {/* Logo (tamanho fixo, sem encolher) */}
           <a href="#" className="flex items-center cursor-pointer">
             <img 
               src="/logo.svg" 
               alt="Yama Print" 
-              className="h-10 md:h-12 w-auto object-contain" 
+              className="h-10 md:h-12 w-auto object-contain"
             />
           </a>
 
-          {/* Menu Desktop (Permanecendo limpo como você já tem) */}
+          {/* Menu Desktop */}
           <nav className="hidden md:flex items-center gap-8">
             <a href="#localizacao" className="text-gray-700 hover:text-yama-blue-dark font-medium text-sm transition-colors uppercase tracking-wide">
               Contato
@@ -79,9 +116,9 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Menu Mobile (Atualizado: Contato agora virou botão estilo pílula com cor diferenciada) */}
+        {/* Menu Mobile */}
         {isOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-lg border-t mt-4 px-6 py-5 flex flex-col gap-3 shadow-xl absolute w-full left-0 z-40">
+          <div className="md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 mt-4 px-6 py-5 flex flex-col gap-3 shadow-xl absolute w-full left-0 z-40">
             <a
               href="#localizacao"
               onClick={() => setIsOpen(false)}
