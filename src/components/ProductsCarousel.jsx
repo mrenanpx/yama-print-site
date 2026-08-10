@@ -5,7 +5,7 @@ import { FiChevronLeft, FiChevronRight, FiPlus } from 'react-icons/fi';
 const productsData = [
   { id: 1, image: '/products/prtd1.webp', title: 'CADERNO 1 MATÉRIA', price: 'R$ 14,90', startingAt: true },
   { id: 2, image: '/products/prtd2.webp', title: 'CARTÃO DE VISITA COUCHÊ 250g', price: 'R$ 79,00', tag: 'MAIS VENDIDO', tagColor: 'bg-green-500', startingAt: true },
-  { id: 3, image: '/products/prtd3.webp', title: 'CANETA BIC', price: 'R$ 1,30',tag:'MAIS VENDIDO', tagColor: 'bg-green-500', startingAt: true },
+  { id: 3, image: '/products/prtd3.webp', title: 'CANETA BIC', price: 'R$ 1,30',tag: 'MAIS VENDIDO', tagColor: 'bg-green-500', startingAt: true },
   { id: 4, image: '/products/prtd4.webp', title: 'MARCA TEXTO MASTERPRINT', price: 'R$ 2,50', tag: 'PROMOÇÃO', tagColor: 'bg-blue-500' },
   { id: 5, image: '/products/prtd5.webp', title: 'PASTA EM L YES', price: 'R$ 2,75' },
   { id: 6, image: '/products/prtd6.webp', title: 'LAPIS ACRILEX', price: 'R$ 0,99', tag: 'OFERTA', tagColor: 'bg-yama-red' },

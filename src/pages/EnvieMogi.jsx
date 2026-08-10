@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 import { FiRefreshCw } from 'react-icons/fi';
+import ProductsCarousel from '../components/ProductsCarousel';
 
 const EnvieMogi = () => {
   useEffect(() => {
@@ -16,6 +17,8 @@ const EnvieMogi = () => {
   }, []);
 
   return (
+    <>
+    
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100 flex items-center justify-center p-4">
       <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-6 md:p-8 text-center border border-gray-100 relative overflow-hidden">
         
@@ -55,7 +58,7 @@ const EnvieMogi = () => {
           </p>
         </div>
 
-        <div className="space-y-4 text-sm text-gray-600 border-t border-gray-100 pt-6">
+         <div className="space-y-4 text-sm text-gray-600 border-t border-gray-100 pt-6">
           <div>
             <strong className="block text-gray-800 uppercase tracking-wider text-xs mb-1">Contato:</strong>
             <p className="font-medium text-gray-700">11 3458-9796</p>
@@ -69,10 +72,15 @@ const EnvieMogi = () => {
             <p className="font-bold text-yama-red mt-1">Sábado</p>
             <p className="text-xs text-gray-500">das 9h00 às 14h00</p>
           </div>
+             
         </div>
-
-      </div>
+       </div>
+   
+   
     </div>
+
+   <ProductsCarousel />
+   </>
   );
 };
 
