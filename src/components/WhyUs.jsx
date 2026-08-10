@@ -10,7 +10,7 @@ const WhyUs = () => {
           {/* Coluna Esquerda - Texto (5 colunas) */}
           <div className="lg:col-span-5 space-y-6 text-center lg:text-left z-10">
             <h2 className="text-4xl md:text-5xl font-extrabold text-yama-blue-dark leading-tight">
-              Porque escolher<br />
+              Por que escolher<br />
               <span className="text-yama-red">a YAMA PRINT?</span>
             </h2>
             <p className="text-gray-600 text-base md:text-lg leading-relaxed">
