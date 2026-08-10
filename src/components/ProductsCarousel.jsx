@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { FiChevronLeft, FiChevronRight, FiPlus } from 'react-icons/fi';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 // Array com os produtos
 const productsData = [
-  { id: 1, image: '/products/prtd1.webp', title: 'CADERNO 1 MATÉRIA', price: 'R$ 14,90', startingAt: true },
-  { id: 2, image: '/products/prtd2.webp', title: 'CARTÃO DE VISITA COUCHÊ 250g', price: 'R$ 79,00', tag: 'MAIS VENDIDO', tagColor: 'bg-green-500', startingAt: true },
-  { id: 3, image: '/products/prtd3.webp', title: 'CANETA BIC', price: 'R$ 1,30',tag: 'MAIS VENDIDO', tagColor: 'bg-green-500', startingAt: true },
-  { id: 4, image: '/products/prtd4.webp', title: 'MARCA TEXTO MASTERPRINT', price: 'R$ 2,50', tag: 'PROMOÇÃO', tagColor: 'bg-blue-500' },
-  { id: 5, image: '/products/prtd5.webp', title: 'PASTA EM L YES', price: 'R$ 2,75' },
-  { id: 6, image: '/products/prtd6.webp', title: 'LAPIS ACRILEX', price: 'R$ 0,99', tag: 'OFERTA', tagColor: 'bg-yama-red' },
-  { id: 7, image: '/products/prtd7.webp', title: 'CARNÊ GPS TAMOIO', price: 'R$ 5,90' },
-  { id: 8, image: '/products/prtd8.webp', title: 'CARTOLINA VARIAS CORES', price: 'R$ 1,25', tag: 'MAIS VENDIDO', tagColor: 'bg-green-500' },
-  { id: 9, image: '/products/prtd9.webp', title: 'BANNER C/ BASTÃO', price: 'R$ 60,00', startingAt: true },
-  { id: 10, image: '/products/prtd10.webp', title: 'ADESIVO VINIL C/ RECORTE PERSONALIZADO', price: 'R$ 82,00', startingAt: true },
-  { id: 11, image: '/products/prtd11.webp', title: 'ENVELOPE KRAFT A4', price: 'R$ 1,00', tag: 'MAIS VENDIDO', tagColor: 'bg-green-500' },
+  { id: 1, image: '/products/prtd1.webp', title: 'Cartão de Visita Premium', price: 'R$ 89,90', tag: 'NOVIDADE', tagColor: 'bg-yama-red', startingAt: true },
+  { id: 2, image: '/products/prtd2.webp', title: 'Panfletos Couchê 90g', price: 'R$ 145,00', tag: 'MAIS VENDIDO', tagColor: 'bg-green-500' },
+  { id: 3, image: '/products/prtd3.webp', title: 'Canecas Personalizadas', price: 'R$ 35,00', startingAt: true },
+  { id: 4, image: '/products/prtd4.webp', title: 'Adesivos em Vinil', price: 'R$ 49,90', tag: 'PROMOÇÃO', tagColor: 'bg-blue-500', startingAt: true },
+  { id: 5, image: '/products/prtd5.webp', title: 'Banners em Lona', price: 'R$ 75,00' },
+  { id: 6, image: '/products/prtd6.webp', title: 'Pastas Personalizadas', price: 'R$ 210,00', tag: 'OFERTA', tagColor: 'bg-yama-red' },
+  { id: 7, image: '/products/prtd7.webp', title: 'Cadernos Corporativos', price: 'R$ 42,00' },
+  { id: 8, image: '/products/prtd8.webp', title: 'Agendas 2027', price: 'R$ 55,00' },
+  { id: 9, image: '/products/prtd9.webp', title: 'Crachás em PVC', price: 'R$ 15,50', tag: 'LANÇAMENTO', tagColor: 'bg-purple-500', startingAt: true },
+  { id: 10, image: '/products/prtd10.webp', title: 'Carimbos Automáticos', price: 'R$ 45,00' },
+  { id: 11, image: '/products/prtd11.webp', title: 'Receituários Médicos', price: 'R$ 95,00' },
 ];
 
 const ProductsCarousel = () => {
@@ -68,7 +68,7 @@ const ProductsCarousel = () => {
 
     const timer = setInterval(() => {
       nextPage();
-    }, 5000); // 5 segundos
+    }, 2500); // 2.5 segundos
 
     // Limpa o timer para não sobrepor intervalos ao trocar de página
     return () => clearInterval(timer);
@@ -128,7 +128,7 @@ const ProductsCarousel = () => {
                     {product.title}
                   </h3>
                   
-                  {/* Destaque Elegante do Preço */}
+                  {/* Destaque Elegante do Preço (Sem o ícone de +) */}
                   <div className="mt-auto pt-3 border-t border-gray-100 flex items-center justify-between">
                     <div className="flex flex-col">
                       {product.startingAt ? (
@@ -145,10 +145,6 @@ const ProductsCarousel = () => {
                         {product.price}
                       </span>
                     </div>
-                    
-                    <div className="w-7 h-7 md:w-8 md:h-8 rounded-full bg-gray-50 flex items-center justify-center text-gray-500 group-hover:bg-yama-red group-hover:text-white transition-all duration-300 shadow-sm shrink-0">
-                      <FiPlus className="text-base md:text-lg" />
-                    </div>
                   </div>
 
                 </div>
@@ -156,7 +152,7 @@ const ProductsCarousel = () => {
             ))}
           </div>
 
-          {/* Navegação Manual (Agora a trava de pausa por Hover está SOMENTE aqui) */}
+          {/* Navegação Manual */}
           <div 
             className="flex justify-center items-center gap-6 mt-10"
             onMouseEnter={() => setIsHovered(true)}

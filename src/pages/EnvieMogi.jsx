@@ -79,7 +79,7 @@ const EnvieMogi = () => {
    
     </div>
 
-   <ProductsCarousel />
+   {/* <ProductsCarousel /> */}
    </>
   );
 };
