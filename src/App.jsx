@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; // <-- Navigate adicionado aqui
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import { Analytics } from '@vercel/analytics/react';
 
 // Importação dos componentes do site principal
@@ -13,9 +13,10 @@ import Location from './components/Location';
 import Footer from './components/Footer';
 import ProductsCarousel from './components/ProductsCarousel';
 
-// Importação das páginas ocultas de QR Code
+// Importação das Páginas
 import EnvieMogi from './pages/EnvieMogi';
 import EnvieSuzano from './pages/EnvieSuzano';
+import NotFound from './pages/NotFound'; // <-- Importando nossa nova página 404
 
 // Componente da Página Principal (Home)
 const Home = () => {
@@ -48,8 +49,8 @@ function App() {
           <Route path="/envie-seu-arquivo" element={<EnvieMogi />} />
           <Route path="/envie-seu-arquivo2" element={<EnvieSuzano />} />
 
-          {/* ROTA CURINGA: Qualquer link que não exista cai aqui e volta pra Home */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* ROTA CURINGA: Chama a página de erro 404 */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
       
