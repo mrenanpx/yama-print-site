@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'; // <-- Navigate adicionado aqui
 import { Analytics } from '@vercel/analytics/react';
 
 // Importação dos componentes do site principal
@@ -47,6 +47,9 @@ function App() {
           {/* Páginas Ocultas acessadas via QR Code */}
           <Route path="/envie-seu-arquivo" element={<EnvieMogi />} />
           <Route path="/envie-seu-arquivo2" element={<EnvieSuzano />} />
+
+          {/* ROTA CURINGA: Qualquer link que não exista cai aqui e volta pra Home */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
       

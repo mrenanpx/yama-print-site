@@ -232,7 +232,7 @@ const Header = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Descreva o que você precisa (quantidades, tamanhos, papéis, itens de papelaria...)"
-                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yama-blue-dark focus:ring-2 focus:ring-yama-blue-dark/20 outline-none text-sm bg-gray-50 resize-none"
+                  className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-yama-pink focus:ring-2 focus:ring-yama-blue-dark/20 outline-none text-sm bg-gray-50 resize-none"
                 ></textarea>
               </div>
 
